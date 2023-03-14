@@ -95,7 +95,7 @@ def train(args):
     start_time = time.time()
 
 
-    with Progres() as progress:
+    with Progress() as progress:
         task = progress.add_task("[red]Training...", total=args.max_steps)
         for step in range(0, args.max_steps):
             batch_start = time.time()
