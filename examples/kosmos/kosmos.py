@@ -80,6 +80,7 @@ class Kosmos(Module):
             decoder_attention_heads=32,
             dropout=0.1,
             activation_fn="flashattention",
+            use_xmoe=True,
             attention_dropout=0.1,
             vocab_size=32002,
             subln=True,
