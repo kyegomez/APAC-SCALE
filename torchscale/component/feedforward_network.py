@@ -4,6 +4,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from flash_attn.flash_attention import FlashMHA
+
 try:
     from apex.normalization import FusedLayerNorm as LayerNorm
 except ModuleNotFoundError:
@@ -91,6 +93,8 @@ def get_activation_fn(activation):
         return F.relu
     elif activation == "gelu":
         return F.gelu
+    elif activation == "flashattention":
+        return FlashMHA
     else:
         raise NotImplementedError
 

@@ -11,6 +11,7 @@ class EncoderConfig(object):
         self.encoder_normalize_before = kwargs.pop("encoder_normalize_before", True)
         self.normalize_output = kwargs.pop("normalize_output", True)
         self.activation_fn = kwargs.pop("activation_fn", "gelu")
+        # self.activation_fn = kwargs.pop("activation_fn", "flashattention")
         self.dropout = kwargs.pop("dropout", 0.0)
         self.drop_path_rate = kwargs.pop("drop_path_rate", 0.0)
         self.attention_dropout = kwargs.pop("attention_dropout", 0.0)
